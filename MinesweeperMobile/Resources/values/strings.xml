@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">MinesweeperMobile</string>
     <string name="action_settings">Settings</string>
+	<string name="welcome_text">Welcome to Minesweeper Mobile</string>
+	<string name="play_game">Play</string>
+	<string name="change_settings">Settings</string>
+	<string name="leaderboard">Leaderboard</string>
+	<string name="exit">Exit</string>
+	<string name="easy_difficulty">Easy</string>
+	<string name="moderate_difficulty">Moderate</string>
+	<string name="hard_difficulty">Hard</string>
 </resources>
