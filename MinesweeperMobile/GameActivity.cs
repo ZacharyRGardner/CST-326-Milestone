@@ -14,34 +14,37 @@ namespace MinesweeperMobile
     [Activity(Label = "GameActivity")]
     public class GameActivity : Activity
     {
-        public Button[,] btnGrid = new Button[10, 10];
+        public int size = 10;
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.activity_game);
-
+            Button[,] btnGrid = new Button[size, size];
             // Create your application here
-            GridView grid = (GridView)FindViewById(Resource.Id.gridView1);
-
-            
-            for (int r=0; r<10; r++)
+            TableLayout tableLayout = (TableLayout)FindViewById(Resource.Id.tableLayout2);
+            tableLayout.WeightSum = 10;
+            for (int r = 0; r < size; r++)
             {
-                for (int c = 0; c < 10; c++)
+                TableRow row = new TableRow(this);
+                row.WeightSum = 10;
+                TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent); row.LayoutParameters = lp;
+                for (int c = 0; c < size; c++)
                 {
-                //    btnGrid[r,c] = new Button()
-                //    btnGrid[r, c].Width = buttonSize;
-                //    btnGrid[r, c].Height = buttonSize;
-                //    btnGrid[r, c].MouseDown += Grid_Button_Click;
-                //    panel1.Controls.Add(btnGrid[r, c]);
-                //    btnGrid[r, c].Location = new Point(buttonSize * r, buttonSize * c);
-                //    btnGrid[r, c].Tag = r.ToString() + "|" + c.ToString();
-                //    btnGrid[r, c].BackColor = Color.Cornsilk;
-                //    btnGrid[r, c].BackgroundImageLayout = ImageLayout.Stretch;                
+                    var b = new Button(this);
+                    b.Text = "m";
+                    LinearLayout.LayoutParams paramsBtn = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WrapContent);
+                    paramsBtn.Weight = 1;
+                    b.LayoutParameters = new TableRow.LayoutParams(TableRow.LayoutParams.MatchParent, TableRow.LayoutParams.WrapContent);
+                    row.AddView(b);
+                    
+                    
                 }
+                tableLayout.AddView(row);
             }
 
-            
+
         }
     }
 }
