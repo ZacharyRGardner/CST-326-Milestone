@@ -30,7 +30,7 @@ namespace MinesweeperMobile
                 }
             }
         }
-        public void setupLiveNeighbors(int Difficulty)
+        public void SetupLiveNeighbors(int Difficulty)
         {
             Random r = new Random();
             switch (Difficulty)
@@ -80,7 +80,7 @@ namespace MinesweeperMobile
             }
         }
 
-        public void calculateLiveNeighbors()
+        public void CalculateLiveNeighbors()
         {
             for (int i = 0; i < Size; i++)
             {
@@ -89,12 +89,12 @@ namespace MinesweeperMobile
                     if (Grid[i, j].Live == true)
                     {
                         Grid[i, j].LiveNeighbors = 9;
-                        setLiveNeighbors(i, j);
+                        SetLiveNeighbors(i, j);
                     }
                 }
             }
         }
-        public void setLiveNeighbors(int r, int c)
+        public void SetLiveNeighbors(int r, int c)
         {
             for (int i = -1; i < 2; i++)
             {
